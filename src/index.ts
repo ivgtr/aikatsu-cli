@@ -1,5 +1,6 @@
-const main = () => {
-  console.log('Hello World')
-}
+import list from './config.json'
 
-export default main()
+export default (ep: string | undefined, opts: { find?: string | undefined }) => {
+  console.log(ep, opts.find)
+  return list
+}
