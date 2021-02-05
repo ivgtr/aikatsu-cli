@@ -1,6 +1,12 @@
-import list from './config.json'
+import list from './configs/kakugen.json'
 
-export default (ep: string | undefined, opts: { find?: string | undefined }) => {
-  console.log(ep, opts.find)
-  return list
+const findKakugen = (query: string) =>
+  list.filter((item) => item.id.toString() === query || item.title.includes(query))
+
+export default async (query?: string) => {
+  const kakugenList: Aikatsu[] = query ? findKakugen(query) : list
+  if (query && kakugenList.length === 0) {
+    throw new Error(`${'(´- ₃ -`)'} ﾌﾞﾌﾞｰ、${query} は見つかりません`)
+  }
+  return kakugenList[Math.floor(Math.random() * kakugenList.length)]
 }
