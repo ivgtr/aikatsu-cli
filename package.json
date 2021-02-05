@@ -1,8 +1,25 @@
 {
-  "name": "test",
+  "name": "aikatsu-cli",
+  "description": "アイカツ！格言を再生するCLI",
   "version": "0.0.1",
-  "main": "index.js",
   "license": "MIT",
+  "main": "./dist/index.js",
+  "bin": {
+    "aikatsu": "./dist/cli.js"
+  },
+  "author": {
+    "name": "ivgtr",
+    "email": "ivgtr.me@gmail.com",
+    "url": "https://github.com/ivgtr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivgtr/aikatsu-cli.git"
+  },
+  "homepage": "https://github.com/ivgtr/aikatsu-cli#readme",
+  "bugs": {
+    "url": "https://github.com/ivgtr/aikatsu-cli/issues"
+  },
   "scripts": {
     "start": "tsc -w"
   },
