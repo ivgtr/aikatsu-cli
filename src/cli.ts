@@ -6,7 +6,7 @@ import type { Package } from 'update-notifier'
 import symphogear from 'symphogear-g'
 import Aikatsu from './index'
 
-export default (async () => {
+export default (() => {
   const cli = meow(
     `
 Usage
@@ -40,7 +40,7 @@ Examples
   updateNotifier({ pkg: cli.pkg as Package }).notify()
 
   const { input, flags } = cli
-  await Aikatsu(input[0])
+  Aikatsu(input[0])
     .then((kakugen) => {
       if (flags.title) {
         console.log(`\u001b[35m${kakugen.id}\u001b[0m ${kakugen.title}`)
