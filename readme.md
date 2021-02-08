@@ -29,6 +29,7 @@ $ aikatsu --help
       30 ライブは一体感！
 
       $ aikatsu --link
+      http://odayaka.work/152%E3%82%A2%E3%82%A4%E3%82%AB%E3%83%84%EF%BC%81%E3%81%AF%E3%81%A4%E3%81%A5%E3%81%8F%EF%BC%81%EF%BC%81.mp3
 ```
 
 ### Packages

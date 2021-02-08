@@ -21,7 +21,7 @@ Examples
   30 ライブは一体感！
 
   $ aikatsu --link
-  http://sanabutton.ojaru.jp/.%2Fsound%2F%E7%9C%8B%E8%AD%B7%E3%81%AE%E6%97%A5%E2%80%A6%E3%81%A8%E3%81%AF%E8%A8%80%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE%E3%81%AE%2F%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%AB%E3%83%95%E3%82%A3%E3%82%AE%E3%83%A5%E3%82%A203.mp3
+  http://odayaka.work/152%E3%82%A2%E3%82%A4%E3%82%AB%E3%83%84%EF%BC%81%E3%81%AF%E3%81%A4%E3%81%A5%E3%81%8F%EF%BC%81%EF%BC%81.mp3
 `,
     {
       flags: {
