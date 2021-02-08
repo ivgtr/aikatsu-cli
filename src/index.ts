@@ -1,7 +1,7 @@
 import list from './configs/kakugen.json'
 
 const findKakugen = (query: string) =>
-  list.filter((item) => item.id.toString() === query || item.title.includes(query))
+  list.filter((item) => (Number(query) ? item.id === Number(query) : item.title.includes(query)))
 
 export default async (query?: string) => {
   const kakugenList: Aikatsu[] = query ? findKakugen(query) : list
