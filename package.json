@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
     "aikatsu": "./dist/cli.js"
   },
@@ -21,19 +22,21 @@
     "url": "https://github.com/ivgtr/aikatsu-cli/issues"
   },
   "files": [
-    "readme.md",
+    "README.md",
+    "LICENSE",
     "package.json",
-    "yarn.lock",
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "start": "tsc -w",
-    "prebuild": "rimraf dist",
-    "build": "tsc",
-    "prepublishOnl": "yarn build"
+    "prebuild": "rimraf ./lib",
+    "build": "tsc -b tsconfig-build.json",
+    "lint": "eslint",
+    "test": "jest"
   },
   "devDependencies": {
-    "@types/node": "14.17.0",
+    "@types/node": "^14.17.0",
     "@types/update-notifier": "5.0.0",
     "eslint": "7.26.0",
     "eslint-config-sumikko": "1.1.2",
@@ -43,8 +46,8 @@
     "typescript": "4.2.4"
   },
   "dependencies": {
-    "meow": "^10.0.0",
-    "symphogear-g": "^0.3.0",
+    "meow": "9.0.0",
+    "symphogear-g": "^0.3.2",
     "update-notifier": "^5.1.0"
   }
 }
