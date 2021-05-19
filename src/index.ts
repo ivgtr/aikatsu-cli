@@ -1,7 +1,10 @@
-import { readFile } from "fs/promises";
+import list from "./configs/kakugen.json";
 
-const file = new URL("./configs/kakugen.json", import.meta.url);
-const list: Aikatsu[] = JSON.parse(await readFile(file, "utf-8"));
+type Aikatsu = {
+  id: number;
+  title: string;
+  link: string;
+};
 
 const findKakugen = (query: string) =>
   list.filter((item) => (Number(query) ? item.id === Number(query) : item.title.includes(query)));

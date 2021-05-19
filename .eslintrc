@@ -3,6 +3,7 @@
     "eslint-config-sumikko",
     "eslint-config-sumikko/node",
     "eslint-config-sumikko/ts",
+    "eslint-config-sumikko/module",
     "eslint-config-sumikko/prettier"
   ],
   "rules": {
