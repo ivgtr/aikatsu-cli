@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import meow from 'meow'
-import updateNotifier from 'update-notifier'
-import type { Package } from 'update-notifier'
-import symphogear from 'symphogear-g'
-import Aikatsu from './index'
+import meow from "meow";
+import symphogear from "symphogear-g";
+import type { Package } from "update-notifier";
+import updateNotifier from "update-notifier";
+import Aikatsu from "./index";
 
 export default (() => {
   const cli = meow(
@@ -26,31 +26,31 @@ Examples
     {
       flags: {
         title: {
-          type: 'boolean',
-          alias: 't'
+          type: "boolean",
+          alias: "t",
         },
         link: {
-          type: 'boolean',
-          alias: 'l'
-        }
-      }
+          type: "boolean",
+          alias: "l",
+        },
+      },
     }
-  )
+  );
 
-  updateNotifier({ pkg: cli.pkg as Package }).notify()
+  updateNotifier({ pkg: cli.pkg as Package }).notify();
 
-  const { input, flags } = cli
+  const { input, flags } = cli;
   Aikatsu(input[0])
     .then((kakugen) => {
       if (flags.title) {
-        console.log(`\u001b[35m${kakugen.id}\u001b[0m ${kakugen.title}`)
+        console.log(`\u001b[35m${kakugen.id}\u001b[0m ${kakugen.title}`);
       }
       if (flags.link) {
-        console.log(kakugen.link)
+        console.log(kakugen.link);
       }
-      symphogear(kakugen.link)
+      symphogear(kakugen.link);
     })
     .catch((err) => {
-      console.log(err.message)
-    })
-})()
+      console.log(err.message);
+    });
+})();
