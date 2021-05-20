@@ -5,6 +5,8 @@
 
 ---
 
+[![CI Test](https://github.com/ivgtr/aikatsu-cli/actions/workflows/test.yml/badge.svg)](https://github.com/ivgtr/aikatsu-cli/actions/workflows/test.yml) [![Publish to npm](https://github.com/ivgtr/aikatsu-cli/actions/workflows/publish.yml/badge.svg)](https://github.com/ivgtr/aikatsu-cli/actions/workflows/publish.yml)
+
 > 📌✨ inspire: https://github.com/akameco/sana-voice
 
 ## Usages

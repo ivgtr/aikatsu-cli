@@ -10,7 +10,7 @@
     "aikatsu": "./dist/cli.js"
   },
   "engines": {
-    "node": ">=14.16"
+    "node": ">=12.17"
   },
   "author": {
     "name": "ivgtr",
