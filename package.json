@@ -48,7 +48,7 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.3.0",
+    "@types/node": "^15.3.1",
     "@types/update-notifier": "5.0.0",
     "babel-jest": "^26.6.3",
     "eslint": "7.26.0",
@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "meow": "10.0.0",
-    "symphogear-g": "^0.4.0",
+    "symphogear-g": "^0.4.2",
     "update-notifier": "^5.1.0"
   }
 }
