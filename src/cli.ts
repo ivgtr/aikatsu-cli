@@ -4,9 +4,9 @@ import meow from "meow";
 import symphogear from "symphogear-g";
 import type { Package } from "update-notifier";
 import updateNotifier from "update-notifier";
-import Aikatsu from "./index.js";
+import { aikatsu } from "./index.js";
 
-export default (() => {
+const cli = () => {
   const cli = meow(
     `
 Usage
@@ -41,17 +41,30 @@ Examples
   updateNotifier({ pkg: cli.pkg as Package }).notify();
 
   const { input, flags } = cli;
-  Aikatsu(input[0])
+  if (flags?.v) {
+    cli.showVersion();
+    return;
+  }
+  if (flags?.h) {
+    cli.showHelp();
+    return;
+  }
+
+  aikatsu(input[0])
     .then((kakugen) => {
-      if (flags.title) {
+      if (flags?.title) {
         console.log(`\u001b[35m${kakugen.id}\u001b[0m ${kakugen.title}`);
       }
-      if (flags.link) {
+      if (flags?.link) {
         console.log(kakugen.link);
       }
-      symphogear(kakugen.link);
+      symphogear(kakugen.link).catch((err) => {
+        console.log(err.message);
+      });
     })
     .catch((err) => {
       console.log(err.message);
     });
-})();
+};
+
+cli();

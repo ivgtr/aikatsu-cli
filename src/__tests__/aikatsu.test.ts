@@ -1,4 +1,4 @@
-import aikatsu from "../index";
+import { aikatsu } from "../";
 
 describe("Check return str", () => {
   test("submit 一体感", async () => {

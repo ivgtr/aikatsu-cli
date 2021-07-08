@@ -1,6 +1,6 @@
-import list from "./configs/kakugen.json";
+import { kakugenList as list } from "./configs/kakugen.js";
 
-type Aikatsu = {
+export type Aikatsu = {
   id: number;
   title: string;
   link: string;
@@ -9,10 +9,12 @@ type Aikatsu = {
 const findKakugen = (query: string) =>
   list.filter((item) => (Number(query) ? item.id === Number(query) : item.title.includes(query)));
 
-export default async (query?: string) => {
+export const aikatsu = async (query?: string) => {
   const kakugenList: Aikatsu[] = query ? findKakugen(query) : list;
   if (query && kakugenList.length === 0) {
     throw new Error(`${"(´- ₃ -`)"} ﾌﾞﾌﾞｰ、${query} は見つかりません`);
   }
   return kakugenList[Math.floor(Math.random() * kakugenList.length)];
 };
+
+export default aikatsu;

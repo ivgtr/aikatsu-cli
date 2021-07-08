@@ -37,11 +37,11 @@ $ aikatsu --help
 ### Packages
 
 ```shell
-$ yarn add aikatsu-cli
+$ npm install aikatsu-cli
 ```
 
 ```js
-import aikatsu from "aikatsu-cli";
+import { aikatsu } from "aikatsu-cli";
 
 const randomKakugen = await aikatsu();
 console.log(randomKakugen);
@@ -50,6 +50,11 @@ console.log(randomKakugen);
 const queryKakugen = await aikatsu("一体感");
 console.log(queryKakugen);
 // => { id:30, title:'ライブは一体感！', link:'~' }
+```
+
+#### API
+```ts
+aikatsu(query?:string) => Promise<string>
 ```
 
 ## License
