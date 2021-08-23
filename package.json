@@ -41,7 +41,7 @@
     "start": "tsc -w",
     "type-check": "tsc --noEmit",
     "type-build": "tsc --project ./tsconfig-build.json --emitDeclarationOnly",
-    "prebuild": "node -e 'fs.rmSync(`lib`, {recursive:true, force:true})'",
+    "prebuild": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})'",
     "build": "rollup -c && npm run type-build",
     "format": "prettier -w ./src/*",
     "test": "jest"
