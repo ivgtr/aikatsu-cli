@@ -9,11 +9,11 @@
   "version": "1.1.0",
   "license": "MIT",
   "type": "module",
-  "main": "./lib/index.cjs",
-  "module": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
-    "aikatsu": "./lib/cli.js"
+    "aikatsu": "./dist/cli.js"
   },
   "engines": {
     "node": ">= 12.2.0"
@@ -32,7 +32,7 @@
     "url": "https://github.com/ivgtr/aikatsu-cli/issues"
   },
   "files": [
-    "lib",
+    "dist",
     "src/index.ts",
     "src/cli.ts",
     "src/configs/kakugen.js"

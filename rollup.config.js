@@ -29,7 +29,7 @@ const plugins = {
 const settings = ({ name, format, plugins }) => ({
   input: `./src/${name}.ts`,
   output: {
-    file: `./lib/${name}.${format === "esm" ? "js" : "cjs"}`,
+    file: `./dist/${name}.${format === "esm" ? "js" : "cjs"}`,
     format,
     sourcemap: true,
     exports: "named",
