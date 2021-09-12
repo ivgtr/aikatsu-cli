@@ -59,7 +59,7 @@
     "@types/update-notifier": "5.1.0",
     "eslint": "7.32.0",
     "eslint-config-sumikko": "1.2.2",
-    "jest": "27.1.0",
+    "jest": "27.1.1",
     "prettier": "2.3.2",
     "rollup": "2.56.3",
     "rollup-plugin-auto-external": "2.0.0",
