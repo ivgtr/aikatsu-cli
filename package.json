@@ -60,7 +60,7 @@
     "eslint": "7.32.0",
     "eslint-config-sumikko": "1.2.2",
     "jest": "27.1.1",
-    "prettier": "2.4.0",
+    "prettier": "2.4.1",
     "rollup": "2.56.3",
     "rollup-plugin-auto-external": "2.0.0",
     "rollup-plugin-preserve-shebang": "1.0.1",
