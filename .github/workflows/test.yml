@@ -23,7 +23,7 @@ jobs:
       - name: Test
         run: |
           npm ci
-          npm test -- --runInBand
+          npm test
           npm run build
 
   minimum-runtime:

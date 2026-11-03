@@ -1,19 +1,17 @@
-import { aikatsu } from "../";
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { aikatsu } from "../index.js";
 
-describe("Check return str", () => {
-  test("submit 一体感", async () => {
-    const queryKakugen = await aikatsu("一体感");
-    // => { id:30, title:'ライブは一体感！', link:'~' }
-
-    expect(queryKakugen.id).toBe(30);
-    expect(queryKakugen.title).toBe("ライブは一体感！");
-  });
-
-  test("submit 30", async () => {
-    const queryKakugen = await aikatsu("30");
-    // => { id:30, title:'ライブは一体感！', link:'~' }
-
-    expect(queryKakugen.id).toBe(30);
-    expect(queryKakugen.title).toBe("ライブは一体感！");
-  });
+test("find by title", async () => {
+  const result = await aikatsu("一体感");
+  assert.equal(result.id, 30);
+  assert.equal(result.title, "ライブは一体感！");
+});
+test("find by id", async () => {
+  const result = await aikatsu("30");
+  assert.equal(result.id, 30);
+  assert.equal(result.title, "ライブは一体感！");
+});
+test("reports an unknown query", async () => {
+  await assert.rejects(aikatsu("__not_found__"), /見つかりません/);
 });
