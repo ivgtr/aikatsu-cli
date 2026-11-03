@@ -9,7 +9,6 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import autoExternals from "rollup-plugin-auto-external";
 import shebang from "rollup-plugin-preserve-shebang";
-import { terser } from "rollup-plugin-terser";
 
 const plugins = {
   externals: autoExternals(),
@@ -23,7 +22,6 @@ const plugins = {
     inlineSources: true,
   }),
   babel: babel({ babelHelpers: "bundled" }),
-  terser: terser(),
 };
 
 const settings = ({ name, format, plugins }) => ({
