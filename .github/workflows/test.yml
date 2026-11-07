@@ -12,15 +12,39 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [22.x, 24.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Test
         run: |
           npm ci
           npm test
+          npm run build
+
+  minimum-runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build package
+        run: |
+          npm ci
+          npm run build
+          npm pack --pack-destination "$RUNNER_TEMP"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install and smoke-test packaged CLI on Node 18
+        run: |
+          mkdir "$RUNNER_TEMP/runtime-test"
+          cd "$RUNNER_TEMP/runtime-test"
+          npm init -y
+          npm install --omit=dev "$RUNNER_TEMP"/*.tgz
+          NO_UPDATE_NOTIFIER=1 ./node_modules/.bin/aikatsu --help
